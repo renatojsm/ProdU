@@ -15,7 +15,7 @@ class CreateVerificationAnswersTable extends Migration
     {
         Schema::create('verification_answers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id')->constrained('verification_questions')->onDelete('cascade');
+            $table->foreignId('verification_question_id')->constrained('verification_questions')->onDelete('cascade');
             $table->enum('tipo', ['Preliminar', 'Final']);
             $table->enum('valor', ['Sim', 'Nao', 'N\A']);
             $table->text('observacao')->nullable();

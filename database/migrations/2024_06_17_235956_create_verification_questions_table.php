@@ -16,7 +16,7 @@ class CreateVerificationQuestionsTable extends Migration
         Schema::create('verification_questions', function (Blueprint $table) {
             $table->id();
             $table->string('question');
-            $table->foreignId('id')->constrained('verification_categories')->onDelete('cascade');
+            $table->foreignId('verification_question_id')->constrained('verification_categories')->onDelete('cascade');
             $table->timestamps();
         });
     }
